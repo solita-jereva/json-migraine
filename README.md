@@ -113,9 +113,9 @@ Class Hierarchies
 
 If the upgradeable class extends other upgradeable classes or contains fields of an upgradeable type, then JSON Migraine will upgrade them also.
 
-Migrating from 1.0.2
+Migrating from 1.0.x
 --------------------
-Jackson has been updated for 1.0.4, replace
+Jackson has been updated for 1.1.0, replace
 ```java
 import org.codehaus.jackson.node.ObjectNode;
 ```
