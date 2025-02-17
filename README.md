@@ -108,13 +108,21 @@ renames.rename("examples.Foo", "examples.Bar");
 JsonMigraine jsonMigraine = new JsonMigraine(new ObjectMapper(), renames);
 ```
 
-
 Class Hierarchies
 -----------------
 
 If the upgradeable class extends other upgradeable classes or contains fields of an upgradeable type, then JSON Migraine will upgrade them also.
 
-
+Migrating from 1.0.2
+--------------------
+Jackson has been updated for 1.0.4, replace
+```java
+import org.codehaus.jackson.node.ObjectNode;
+```
+to
+```java
+import com.fasterxml.jackson.databind.node.ObjectNode;
+```
 
 Testing Tips
 ------------
