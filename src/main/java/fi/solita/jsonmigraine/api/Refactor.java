@@ -4,13 +4,13 @@
 
 package fi.solita.jsonmigraine.api;
 
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class Refactor {
 
     public static void renameField(ObjectNode data, String oldName, String newName) {
         JsonNode value = data.remove(oldName);
-        data.put(newName, value);
+        data.set(newName, value);
     }
 }

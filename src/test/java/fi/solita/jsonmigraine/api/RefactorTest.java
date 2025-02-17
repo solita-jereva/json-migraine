@@ -4,7 +4,7 @@
 
 package fi.solita.jsonmigraine.api;
 
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.junit.Test;
 
 import static fi.solita.jsonmigraine.util.JsonFactory.field;

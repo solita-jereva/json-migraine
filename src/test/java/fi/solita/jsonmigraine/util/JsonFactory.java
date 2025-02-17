@@ -4,7 +4,7 @@
 
 package fi.solita.jsonmigraine.util;
 
-import org.codehaus.jackson.node.*;
+import com.fasterxml.jackson.databind.node.*;
 
 import java.util.Random;
 

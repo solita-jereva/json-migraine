@@ -6,8 +6,8 @@ package fi.solita.jsonmigraine;
 
 import fi.solita.jsonmigraine.api.TypeRenames;
 import fi.solita.jsonmigraine.internal.*;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class JsonMigraine {
 
@@ -25,9 +25,9 @@ public class JsonMigraine {
 
     public String serialize(Object data) throws Exception {
         ObjectNode meta = mapper.createObjectNode();
-        meta.put(DATA_FIELD, mapper.valueToTree(data));
+        meta.set(DATA_FIELD, mapper.valueToTree(data));
         meta.put(TYPE_FIELD, data.getClass().getName());
-        meta.put(VERSIONS_FIELD, ClassAnalyzer.readCurrentVersions(data.getClass()).toJson());
+        meta.set(VERSIONS_FIELD, ClassAnalyzer.readCurrentVersions(data.getClass()).toJson());
         return mapper.writeValueAsString(meta);
     }
 
@@ -43,7 +43,7 @@ public class JsonMigraine {
         DataVersions versions = DataVersions.fromJson(meta.get(VERSIONS_FIELD), renames);
 
         upgrade(data, type, versions);
-        return mapper.readValue(data, type);
+        return mapper.treeToValue(data, type);
     }
 
     private void upgrade(ObjectNode data, Class<?> type, DataVersions versions) {

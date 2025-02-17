@@ -5,8 +5,8 @@
 package fi.solita.jsonmigraine.internal;
 
 import fi.solita.jsonmigraine.api.*;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.node.*;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.node.*;
 
 public class UpgraderInvokerImpl implements UpgraderInvoker {
 
@@ -20,7 +20,7 @@ public class UpgraderInvokerImpl implements UpgraderInvoker {
         JsonNode original = container.get(fieldName);
         try {
             JsonNode upgraded = upgrader.upgrade(original, dataVersion);
-            container.put(fieldName, upgraded);
+            container.set(fieldName, upgraded);
         } catch (ValueRemovedException e) {
             container.remove(fieldName);
         }
@@ -32,7 +32,7 @@ public class UpgraderInvokerImpl implements UpgraderInvoker {
         JsonNode original = container.get(fieldName);
         if (!original.isNull()) {
             JsonNode upgraded = upgradeArray((ArrayNode) original, dataVersion, upgrader);
-            container.put(fieldName, upgraded);
+            container.set(fieldName, upgraded);
         }
         return container;
     }

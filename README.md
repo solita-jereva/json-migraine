@@ -27,7 +27,7 @@ public class Foo {
 
 ```java
 import fi.solita.jsonmigraine.api.ObjectUpgrader;
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class FooUpgrader extends ObjectUpgrader {
 
@@ -48,7 +48,7 @@ JSON Migraine is then used like this so serialize and deserialize the ugpradeabl
 ```java
 import fi.solita.jsonmigraine.JsonMigraine;
 import fi.solita.jsonmigraine.api.TypeRenames;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 TypeRenames renames = new TypeRenames();
 JsonMigraine jsonMigraine = new JsonMigraine(new ObjectMapper(), renames);
@@ -75,7 +75,7 @@ public class Foo {
 
 ```java
 import fi.solita.jsonmigraine.api.*;
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class FooUpgrader extends ObjectUpgrader {
 

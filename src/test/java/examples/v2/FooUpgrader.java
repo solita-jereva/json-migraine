@@ -5,7 +5,7 @@
 package examples.v2;
 
 import fi.solita.jsonmigraine.api.*;
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class FooUpgrader extends ObjectUpgrader {
 

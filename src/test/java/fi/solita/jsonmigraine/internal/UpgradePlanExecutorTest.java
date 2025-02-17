@@ -5,7 +5,7 @@
 package fi.solita.jsonmigraine.internal;
 
 import fi.solita.jsonmigraine.api.Upgrader;
-import org.codehaus.jackson.JsonNode;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.*;
 import org.junit.rules.ExpectedException;
 import org.mockito.InOrder;

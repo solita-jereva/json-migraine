@@ -5,7 +5,7 @@
 package examples.v3;
 
 import fi.solita.jsonmigraine.api.*;
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 
 public class BarUpgrader extends ObjectUpgrader {
 

@@ -7,7 +7,7 @@ package examples.v3;
 import examples.v2.Foo;
 import fi.solita.jsonmigraine.JsonMigraine;
 import fi.solita.jsonmigraine.api.TypeRenames;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;

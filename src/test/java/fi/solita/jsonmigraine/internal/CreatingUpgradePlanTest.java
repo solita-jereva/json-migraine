@@ -5,7 +5,7 @@
 package fi.solita.jsonmigraine.internal;
 
 import fi.solita.jsonmigraine.api.*;
-import org.codehaus.jackson.JsonNode;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;

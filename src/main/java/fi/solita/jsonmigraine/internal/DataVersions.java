@@ -5,8 +5,8 @@
 package fi.solita.jsonmigraine.internal;
 
 import fi.solita.jsonmigraine.api.TypeRenames;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.node.*;
+import com.fasterxml.jackson.databind.node.*;
+import com.fasterxml.jackson.databind.JsonNode;
 
 import java.util.*;
 
@@ -42,7 +42,7 @@ public class DataVersions {
 
     public static DataVersions fromJson(JsonNode json, TypeRenames renames) {
         DataVersions versions = new DataVersions();
-        for (String dataType : asIterable(json.getFieldNames())) {
+        for (String dataType : asIterable(json.fieldNames())) {
             int dataVersion = json.get(dataType).asInt();
             versions.add(new DataVersion(renames.getLatestName(dataType), dataVersion));
         }
